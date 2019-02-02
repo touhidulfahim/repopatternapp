@@ -5,20 +5,16 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Index</h2>
-<link href="~/Content/DataTables/css/jquery.dataTables.min.css" rel="stylesheet" />
-<p>
-    @Html.ActionLink("Create New", "SaveEmployee")
-</p>
 <div class="row">
     <div class="col-lg-12">
-        <div class="panel panel-default">
-            <div class="panel-heading">Roles</div>
-            <div class="panel-body">
-                <table id="employeeTable" class="table table-striped table-bordered dt-responsive nowrap" width="100%">
-                    <thead>
+        <div class="card">
+            <div class="card-header"><a href="@Url.Action("SaveEmployee","Employee")" class="btn btn-primary"><i class="fa fa-plus"></i> Create New</a> </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table id="employeeTable" class="table table-striped table-bordered" width="100%">
+                        <thead>
                         <tr>
-                            <th>EmployeeName</th>
+                            <th>Name</th>
                             <th>Gender</th>
                             <th>Phone</th>
                             <th>Email</th>
@@ -26,17 +22,15 @@
                             <th>Salary</th>
                             <th>Edit</th>
                             <th>Delete</th>
-                            <th>Details</th>
                         </tr>
-                    </thead>
-                </table>
+                        </thead>
+                    </table>
+                </div>
             </div>
         </div>
     </div>
 </div>
 @section Scripts {
-    <script src="~/Scripts/DataTables/dataTables.bootstrap.min.js"></script>
-    <script src="~/Scripts/DataTables/jquery.dataTables.min.js"></script>
     <script>
         $(document).ready(function () {
             $("#employeeTable").DataTable({
@@ -83,20 +77,17 @@
 
                 //    ],
                 "columns": [
-                    { "data": "EmployeeName", "name": "EmployeeName", "autoWidth": true },
+                    { "data": "EmployeeName", "name": "Name", "autoWidth": true },
                     { "data": "Gender", "name": "Gender", "autoWidth": true },
                     { "data": "Phone", "name": "Phone", "autoWidth": true },
                     { "data": "Email", "name": "Email", "autoWidth": true },
                     { "data": "Age", "name": "Age", "autoWidth": true },
                     { "data": "Salary", "name": "Salary", "autoWidth": true },
                     {
-                        "render": function (data, type, full, meta) { return '<a class="btn btn-info" href="/MenuMasters/Edit/' + full.MenuId + '">Edit</a>'; }
+                        "render": function (data, type, full, meta) { return '<a class="btn btn-warning" href="/Employee/EditEmployee/' + full.EmployeeId + '"><i class="fa fa-pencil"></i></a>'; }
                     },
                     {
-                        "render": function (data, type, full, meta) { return '<a class="btn btn-info" href="/MenuMasters/Delete/' + full.MenuId + '">Delete</a>'; }
-                    },
-                    {
-                        "render": function (data, type, full, meta) { return '<a class="btn btn-info" href="/MenuMasters/Details/' + full.MenuId + '">Details</a>'; }
+                        "render": function (data, type, full, meta) { return '<a class="btn btn-danger" href="/Employee/Delete/' + full.EmployeeId + '"><i class="fa fa-trash"></i></a>'; }
                     }
                 ]
 

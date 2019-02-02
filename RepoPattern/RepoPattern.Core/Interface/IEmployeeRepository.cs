@@ -13,7 +13,8 @@ namespace RepoPattern.Core.Interface
         IQueryable<EmployeeModels> ShowAllEmployee(string search);
         int? AddEmployee(EmployeeModels employeeModels);
         int? UpdateEmployee(EmployeeModels employeeModels);
-        int? RemoveEmployee(int? id);
-        
+        void RemoveEmployee(int? empId);
+        EmployeeModels GetEmployeeById(int? empId);
+
     }
 }

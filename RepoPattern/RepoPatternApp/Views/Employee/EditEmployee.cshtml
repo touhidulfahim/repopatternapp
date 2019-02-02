@@ -10,10 +10,12 @@
     {
         @Html.AntiForgeryToken()
 
-        <div class="card-header">Add Employee Information</div>
+        <div class="card-header">Update Employee Information</div>
         <div class="card-body">
+            @Html.HiddenFor(e=>e.EmployeeId)
             @Html.ValidationSummary(true, "", new { @class = "text-danger" })
             <div class="row">
+
                 <div class="col-md-6">
                     <div class="form-group">
                         <label for="EmployeeName" class="control-label col-md-2">Name</label>
@@ -68,7 +70,7 @@
         </div>
         <div class="card-footer">
             <div class="col-md-10">
-                <input type="submit" value="Add Employee" class="btn btn-primary" />
+                <input type="submit" value="Update Employee" class="btn btn-primary" />
             </div>
         </div>
     }

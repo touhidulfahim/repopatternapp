@@ -3,29 +3,67 @@
 }
 
 <div class="jumbotron">
-    <h1>ASP.NET</h1>
-    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-    <p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+    <h1 class="text-primary">Repository Pattern</h1>
+    <p class="lead"> is one of the most popular patterns to create an enterprise level application. It restricts us to work directly with the data in the application and creates new layers for database operations, business logic, and the application’s UI......</p>
 </div>
 
-<div class="row">
-    <div class="col-md-4">
-        <h2>Getting started</h2>
-        <p>
-            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
-        </p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
+
+<div class="card-deck">
+    <div class="card col-md-3">
+        <div class="card-body">
+            <h5 class="card-title">Core Project</h5>
+            <p class="card-text">
+               Contains(Class Library):
+            </p>
+            <small class="text-muted">
+                <ul>
+                    <li>Domain entities</li>
+                    <li>Repository interfaces or database operations interfaces on domain entities</li>
+                    <li>Domain-specific data annotations</li>
+                </ul>
+            </small>
+        </div>
     </div>
-    <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
+    <div class="card col-md-3">
+        <div class="card-body">
+            <h5 class="card-title">Infra Project</h5>
+            <p class="card-text">
+                Contains(Class Library):
+            </p>
+            <small class="text-muted">
+                <ul>
+                    <li>Database operations</li>
+                    <li>Working with WCF and Web Services</li>
+                    <li>Implement IProductRepsitory interface</li>
+                </ul>
+            </small>
+        </div>
     </div>
-    <div class="col-md-4">
-        <h2>Web Hosting</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
+    <div class="card col-md-3">
+        <div class="card-body">
+            <h5 class="card-title">Test Project</h5>
+            <p class="card-text">
+                Contains(Unit Test):
+            </p>
+            <small class="text-muted">
+                <ul>
+                    <li>Unit test for Infrastructure Project</li>
+                </ul>
+            </small>
+        </div>
     </div>
+    <div class="card col-md-3">
+        <div class="card-body">
+            <h5 class="card-title">MVC Project</h5>
+            <p class="card-text">
+                Contains(MVC):
+            </p>
+            <small class="text-muted">
+                <ul class="card-text">
+                    <li>MVC based web application using infra and core project library using DI</li>
+                </ul>
+            </small>
+        </div>
+    </div>
+    
 </div>

@@ -79,8 +79,22 @@ namespace RepoPattern.Infrastructure.Repository
             {
                 throw;
             }
-          
+
         }
+
+        public EmployeeModels GetEmployeeById(int? empId)
+        {
+            try
+            {
+                return _context.Employees.Find(empId);
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
 
         public int? AddEmployee(EmployeeModels employeeModels)
         {
@@ -104,12 +118,37 @@ namespace RepoPattern.Infrastructure.Repository
 
         public int? UpdateEmployee(EmployeeModels employeeModels)
         {
-            throw new NotImplementedException();
+            try
+            {
+                int? emp = -1;
+                if (employeeModels !=null)
+                {
+                    _context.Entry(employeeModels).State = EntityState.Modified;
+                    _context.SaveChanges();
+                }
+
+                return emp;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
 
-        public int? RemoveEmployee(int? id)
+        public void RemoveEmployee(int? empId)
         {
-            throw new NotImplementedException();
+            try
+            {
+                EmployeeModels employeeModels = _context.Employees.Find(empId);
+                if (employeeModels != null) _context.Employees.Remove(employeeModels);
+                _context.SaveChanges();
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
     }
 }

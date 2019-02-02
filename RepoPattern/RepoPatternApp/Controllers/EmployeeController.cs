@@ -6,6 +6,7 @@ using System.Data.Entity;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Linq.Dynamic;
+using System.Net;
 using Dapper;
 using System.Web.Mvc;
 using RepoPattern.Core.Interface;
@@ -80,5 +81,90 @@ namespace RepoPatternApp.Controllers
                 throw;
             }
         }
+
+        [HttpGet]
+        public ActionResult EditEmployee(int? id)
+        {
+            try
+            {
+                if (id == null)
+                {
+                    return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+                }
+                EmployeeModels employeeModels = _iEmployeeRepository.GetEmployeeById(id);
+                if (employeeModels == null)
+                {
+                    return HttpNotFound();
+                }
+                return View(employeeModels);
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult EditEmployee(EmployeeModels employeeModels)
+        {
+            try
+            {
+                if (ModelState.IsValid)
+                {
+                    _iEmployeeRepository.UpdateEmployee(employeeModels);
+                    return RedirectToAction("Index");
+                }
+                return View(employeeModels);
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
+        // GET: MenuMasters/Delete/5
+        public ActionResult Delete(int? id)
+        {
+            try
+            {
+
+                if (id == null)
+                {
+                    return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+                }
+                EmployeeModels emloyeeModels = _iEmployeeRepository.GetEmployeeById(id);
+                if (emloyeeModels == null)
+                {
+                    return HttpNotFound();
+                }
+                return View(emloyeeModels);
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
+        // POST: MenuMasters/Delete/5
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeleteConfirmed(int id)
+        {
+            try
+            {
+                _iEmployeeRepository.RemoveEmployee(id);
+                return RedirectToAction("Index");
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
+
+
     }
 }
