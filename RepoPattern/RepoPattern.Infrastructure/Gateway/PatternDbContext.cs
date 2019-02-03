@@ -15,6 +15,7 @@ namespace RepoPattern.Infrastructure.Gateway
         }
 
         public DbSet<EmployeeModels> Employees { get; set; }
+        public DbSet<Department> Departments { get; set; }
 
     }
 }
