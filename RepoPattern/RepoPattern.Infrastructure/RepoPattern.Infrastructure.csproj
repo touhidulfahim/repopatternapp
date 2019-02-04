@@ -94,8 +94,17 @@
     <Compile Include="Migrations\201902032046348_PopulateDepartment.Designer.cs">
       <DependentUpon>201902032046348_PopulateDepartment.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201902042057355_AddedDepartmentColumninEmployeetable.cs" />
+    <Compile Include="Migrations\201902042057355_AddedDepartmentColumninEmployeetable.Designer.cs">
+      <DependentUpon>201902042057355_AddedDepartmentColumninEmployeetable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201902042128152_PopulateDepartment1.cs" />
+    <Compile Include="Migrations\201902042128152_PopulateDepartment1.Designer.cs">
+      <DependentUpon>201902042128152_PopulateDepartment1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repository\DepartmentRepository.cs" />
     <Compile Include="Repository\EmployeeRepository.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -117,6 +126,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201902032046348_PopulateDepartment.resx">
       <DependentUpon>201902032046348_PopulateDepartment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201902042057355_AddedDepartmentColumninEmployeetable.resx">
+      <DependentUpon>201902042057355_AddedDepartmentColumninEmployeetable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201902042128152_PopulateDepartment1.resx">
+      <DependentUpon>201902042128152_PopulateDepartment1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

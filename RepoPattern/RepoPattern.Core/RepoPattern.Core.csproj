@@ -81,6 +81,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Interface\IDepartmentRepository.cs" />
     <Compile Include="Models\Department.cs" />
     <Compile Include="Models\EmployeeModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

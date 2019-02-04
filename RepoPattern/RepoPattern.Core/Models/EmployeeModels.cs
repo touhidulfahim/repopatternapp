@@ -27,6 +27,14 @@ namespace RepoPattern.Core.Models
         public int Age { get; set; }
         [Required]
         public decimal Salary { get; set; }
+
+        [Required(ErrorMessage = "Please select department!")]
+        [Display(Name = "Department")]
+        public int DepartmentId { get; set; }
+
+        [ForeignKey("DepartmentId")]
+        public virtual Department Department { get; set; }
+
     }
 
     //enum Gender

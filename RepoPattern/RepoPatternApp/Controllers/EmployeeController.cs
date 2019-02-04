@@ -58,6 +58,7 @@ namespace RepoPatternApp.Controllers
         [HttpGet]
         public ActionResult SaveEmployee()
         {
+            var departmentList=new List<Department>();
             return View();
         }
 

@@ -11,7 +11,6 @@ namespace RepoPatternApp
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
                         "~/Scripts/jquery-{version}.js",
                         "~/Scripts/bootstrap.min.js",
-                        "~/Scripts/DataTables/dataTables.bootstrap.min.js",
                         "~/Scripts/DataTables/jquery.dataTables.min.js"
             ));
 
