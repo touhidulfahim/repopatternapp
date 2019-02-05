@@ -13,16 +13,17 @@
                 <div class="table-responsive">
                     <table id="employeeTable" class="table table-striped table-bordered" width="100%">
                         <thead>
-                        <tr>
-                            <th>Name</th>
-                            <th>Gender</th>
-                            <th>Phone</th>
-                            <th>Email</th>
-                            <th>Age</th>
-                            <th>Salary</th>
-                            <th>Edit</th>
-                            <th>Delete</th>
-                        </tr>
+                            <tr>
+                                <th>Name</th>
+                                <th>Gender</th>
+                                <th>Phone</th>
+                                <th>Email</th>
+                                <th>Age</th>
+                                <th>Department</th>
+                                <th>Salary</th>
+                                <th>Edit</th>
+                                <th>Delete</th>
+                            </tr>
                         </thead>
                     </table>
                 </div>
@@ -82,6 +83,7 @@
                     { "data": "Phone", "name": "Phone", "autoWidth": true },
                     { "data": "Email", "name": "Email", "autoWidth": true },
                     { "data": "Age", "name": "Age", "autoWidth": true },
+                    { "data": "Department.DepartmentName", "name": "Department", "autoWidth": true },
                     { "data": "Salary", "name": "Salary", "autoWidth": true },
                     {
                         "render": function (data, type, full, meta) { return '<a class="btn btn-warning" href="/Employee/EditEmployee/' + full.EmployeeId + '"><i class="fa fa-pencil"></i></a>'; }

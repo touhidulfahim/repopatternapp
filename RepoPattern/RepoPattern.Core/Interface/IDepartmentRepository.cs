@@ -10,5 +10,6 @@ namespace RepoPattern.Core.Interface
     public interface IDepartmentRepository:IDisposable
     {
         IEnumerable<Department> GetAllDepartment();
+        List<Department> GetDepartmentList();
     }
 }

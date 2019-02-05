@@ -18,10 +18,12 @@ namespace RepoPatternApp.Controllers
     public class EmployeeController : Controller
     {
         private readonly IEmployeeRepository _iEmployeeRepository;
+        private readonly IDepartmentRepository _iDepartmentRepository;
 
         public EmployeeController()
         {
             _iEmployeeRepository = new EmployeeRepository();
+            _iDepartmentRepository = new DepartmentRepository();
         }
         public ActionResult Index()
         {
@@ -58,7 +60,7 @@ namespace RepoPatternApp.Controllers
         [HttpGet]
         public ActionResult SaveEmployee()
         {
-            var departmentList=new List<Department>();
+            ViewBag.Department = _iDepartmentRepository.GetDepartmentList();
             return View();
         }
 
