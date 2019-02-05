@@ -94,6 +94,7 @@ namespace RepoPatternApp.Controllers
                 {
                     return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
                 }
+                ViewBag.Department = _iDepartmentRepository.GetDepartmentList();
                 EmployeeModels employeeModels = _iEmployeeRepository.GetEmployeeById(id);
                 if (employeeModels == null)
                 {
