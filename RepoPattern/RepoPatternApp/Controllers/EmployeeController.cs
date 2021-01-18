@@ -20,11 +20,12 @@ namespace RepoPatternApp.Controllers
         private readonly IEmployeeRepository _iEmployeeRepository;
         private readonly IDepartmentRepository _iDepartmentRepository;
 
-        public EmployeeController()
+        public EmployeeController(IEmployeeRepository iEmployeeRepository, IDepartmentRepository iDepartmentRepository)
         {
-            _iEmployeeRepository = new EmployeeRepository();
-            _iDepartmentRepository = new DepartmentRepository();
+            _iEmployeeRepository = iEmployeeRepository;
+            _iDepartmentRepository = iDepartmentRepository;
         }
+
         public ActionResult Index()
         {
             var employeeList = _iEmployeeRepository.GetAllEmployee();

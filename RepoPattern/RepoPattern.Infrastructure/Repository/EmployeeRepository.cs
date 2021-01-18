@@ -18,9 +18,9 @@ namespace RepoPattern.Infrastructure.Repository
         private readonly PatternDbContext _context;
         private bool _disposed = false;
 
-        public EmployeeRepository()
+        public EmployeeRepository(PatternDbContext context)
         {
-            _context=new PatternDbContext();
+            _context = context;
         }
 
         protected virtual void Dispose(bool disposing)

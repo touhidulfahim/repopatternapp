@@ -12,9 +12,9 @@ namespace RepoPatternApp.Controllers
     {
         private readonly IDepartmentRepository _iDepartmentRepository;
 
-        public DepartmentController()
+        public DepartmentController(IDepartmentRepository iDepartmentRepository)
         {
-            _iDepartmentRepository = new DepartmentRepository();
+            _iDepartmentRepository = iDepartmentRepository;
         }
         
         public ActionResult Index()
